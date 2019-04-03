@@ -18,7 +18,7 @@ RUN { \
         echo "LANGUAGE=$LANG"; \
         echo "LC_ALL=$LANG"; \
 } > /etc/default/locale
-
+RUN dpkg-reconfigure locales
 
 ENV TZ=Asia/Chongqing
 RUN ln -snf /usr/share/zoneinfo/$TZ /etc/localtime && echo $TZ > /etc/timezone
