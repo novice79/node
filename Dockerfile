@@ -10,14 +10,9 @@ RUN apt-get update -y && apt-get install -y \
      
 RUN locale-gen en_US.UTF-8 zh_CN.UTF-8 
 
-ENV LANG en_US.UTF-8
-ENV LANGUAGE en_US.UTF-8
+ENV LANG en_US.UTF-8  
+ENV LANGUAGE en_US:en  
 ENV LC_ALL en_US.UTF-8
-RUN { \
-        echo "LANG=$LANG"; \
-        echo "LANGUAGE=$LANG"; \
-        echo "LC_ALL=$LANG"; \
-} > /etc/default/locale
 RUN dpkg-reconfigure locales
 
 ENV TZ=Asia/Chongqing
