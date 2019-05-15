@@ -6,7 +6,7 @@ LABEL maintainer="David <david@cninone.com>"
 ENV DEBIAN_FRONTEND noninteractive
 
 RUN apt-get update -y && apt-get install -y \
-    curl locales tzdata 
+    curl locales tzdata vim
      
 RUN locale-gen en_US.UTF-8 zh_CN.UTF-8 
 
